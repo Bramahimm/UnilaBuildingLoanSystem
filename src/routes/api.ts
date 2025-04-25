@@ -1,7 +1,10 @@
 import express from "express";
-import dummyController from '../controllers/dummy.controller';
+import authController from "../controllers/auth.controller";
+import loginController from "../controllers/login.controller";
+
 const router = express.Router();
 
-router.get('/dummy', dummyController.dummy);
+router.post("/cekdatabase", authController.cekdatabase);
+router.post("/login", loginController.login);
 
 export default router;
