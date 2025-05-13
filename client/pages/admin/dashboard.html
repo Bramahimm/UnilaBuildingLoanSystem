@@ -18,7 +18,7 @@
   </head>
   <body class="bg-gray-100 min-h-screen flex flex-col">
     <header
-      class="bg-[#00a9e0] flex items-center justify-between px-5 md:px-10 h-14 md:h-16 relative">
+      class="bg-[#00a9e0] flex items-center justify-between px-5 md:px-10 h-14 md:h-16">
       <div class="flex items-center space-x-2 md:space-x-3">
         <img
           alt="University logo with blue background and yellow emblem"
@@ -33,66 +33,66 @@
           Lampung
         </div>
       </div>
-      <div class="flex items-center space-x-8">
-        <nav class="hidden md:flex space-x-10 text-white text-sm font-semibold">
-          <a class="flex items-center space-x-1 hover:underline" href="#">
-            <i class="fas fa-home"> </i>
-            <span> Home </span>
-          </a>
-          <a class="flex items-center space-x-1 hover:underline" href="#">
-            <i class="fas fa-file-alt"> </i>
-            <span> Reservasi </span>
-          </a>
-          <a class="flex items-center space-x-1 hover:underline" href="#">
-            <i class="fas fa-sync-alt"> </i>
-            <span> Pengguna </span>
-          </a>
-        </nav>
-        <!-- Profile dropdown -->
-        <div class="relative" id="profile-dropdown-container">
-          <button
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="profile-dropdown"
-            class="bg-[#3ad29f] text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-md flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#00a9e0] focus:ring-white"
-            id="profile-dropdown-button"
-            type="button"
-            onclick="toggleDropdown()">
-            <span> administrator </span>
-            <i class="fas fa-chevron-down text-xs"> </i>
-          </button>
-          <div
-            aria-labelledby="profile-dropdown-button"
-            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
-            id="profile-dropdown"
-            role="menu"
-            tabindex="-1">
-            <div class="py-1" role="none">
-              <a
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                href="#"
-                role="menuitem"
-                tabindex="-1"
-                id="profile-dropdown-item-0">
-                Profile
-              </a>
-              <a
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                href="#"
-                role="menuitem"
-                tabindex="-1"
-                id="profile-dropdown-item-1">
-                Settings
-              </a>
-              <a
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                href="#"
-                role="menuitem"
-                tabindex="-1"
-                id="profile-dropdown-item-2">
-                Logout
-              </a>
-            </div>
+      <nav class="hidden md:flex space-x-10 text-white text-sm font-semibold">
+        <a class="flex items-center space-x-1 hover:underline" href="#">
+          <i class="fas fa-home"> </i>
+          <span> Home </span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="#">
+          <i class="fas fa-file-alt"> </i>
+          <span> Reservasi </span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="#">
+          <i class="fas fa-sync-alt"> </i>
+          <span> Pengguna </span>
+        </a>
+      </nav>
+      <div
+        class="relative"
+        x-data="{ open: false }"
+        id="profile-dropdown-container">
+        <button
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+          class="bg-[#3ad29f] text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-md flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#00a9e0] focus:ring-white"
+          id="profile-dropdown-button"
+          type="button"
+          onclick="toggleDropdown()">
+          <span> administrator </span>
+          <i class="fas fa-chevron-down text-xs"> </i>
+        </button>
+        <div
+          aria-labelledby="profile-dropdown-button"
+          class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
+          id="profile-dropdown"
+          role="menu"
+          tabindex="-1">
+          <div class="py-1" role="none">
+            <a
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              href="#"
+              role="menuitem"
+              tabindex="-1"
+              id="profile-dropdown-item-0">
+              Profile
+            </a>
+            <a
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              href="#"
+              role="menuitem"
+              tabindex="-1"
+              id="profile-dropdown-item-1">
+              Settings
+            </a>
+            <a
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              href="#"
+              role="menuitem"
+              tabindex="-1"
+              id="profile-dropdown-item-2">
+              Logout
+            </a>
           </div>
         </div>
       </div>
