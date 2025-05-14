@@ -21,7 +21,23 @@ export default {
           return res.status(401).json({ message: "NPM atau password salah." });
         }
 
-        res.status(200).json({ message: "Login berhasil", user: results[0] });
+        const user = results[0];
+
+        if (user.role === "admin") {
+          return res
+            .status(200)
+            .json({ message: "Login berhasil", role: "admin" });
+        } else if (user.role === "mahasiswa") {
+          return res
+            .status(200)
+            .json({ message: "Login berhasil", role: "mahasiswa" });
+        } else if (user.role === "penjaga_gedung") {
+          return res
+            .status(200)
+            .json({ message: "Login berhasil", role: "penjaga_gedung" });
+        } else {
+          return res.status(400).json({ message: "Role tidak dikenali" });
+        }
       }
     );
   },
