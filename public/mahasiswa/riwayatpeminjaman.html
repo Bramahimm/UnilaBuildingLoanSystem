@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEMES Unila - Reservasi Gedung</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/global.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="images/logoUnila.png"
+      type="image/png"
+      sizes="16x16"
+    />
+
+    <style>
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #e0e0e0;
+      }
+
+      .header {
+        background-color: #00afe4;
+      }
+
+      .white-card {
+        background-color: white;
+        border-radius: 12px;
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .header-box {
+        background-color: #05a7be;
+        padding: 12px 20px;
+        color: white;
+        font-weight: 600;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+
+      .row-card,
+      .row-header {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .row-card {
+        background-color: #dcdcdc;
+        border-radius: 12px;
+      }
+
+      .row-header {
+        font-weight: 600;
+      }
+
+      .col-item {
+        flex: 1;
+        min-width: 280px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .status-selesai {
+        color: green;
+        font-weight: 500;
+      }
+
+      .status-dipesan {
+        color: orange;
+        font-weight: 500;
+      }
+
+      .nav-link-custom {
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-link-custom.fw-bold {
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .col-item {
+          min-width: 100%;
+          white-space: normal;
+          text-align: left;
+        }
+
+        .row-card,
+        .row-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary text-white shadow">
+      <div class="container">
+        <a class="navbar-brand text-white" href="index.html">
+          <img
+            src="/images/LogoGemes.png"
+            alt="Logo Gemes"
+            width="200"
+            class="me-2"
+          />
+        </a>
+        <!-- kolom pencarian -->
+        <input
+          type="text"
+          class="form-control w-25"
+          placeholder="Cari Gedung"
+        />
+
+        <!-- Tombol untuk Mobile -->
+        <button
+          class="navbar-toggler text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Navigasi -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="riwayatpeminjaman.html"
+                >Riwayat</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Daftar Gedung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Kalender</a>
+            </li>
+          </ul>
+          <div class="col-md-2 text-md-end mt-2 mt-md-0">
+            <a href="#" class="btn bg-hijauempat text-white">@username</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Konten Riwayat -->
+
+    <div class="container my-5">
+      <div class="white-card shadow">
+        <div class="header-box">Riwayat Peminjaman Gedung</div>
+        <div class="p-4">
+          <!-- Baris Header -->
+          <div class="row-header">
+            <span class="col-item">Tanggal</span>
+            <span class="col-item">Tempat</span>
+            <span class="col-item">Status</span>
+          </div>
+
+          <!-- Data Riwayat -->
+          <a href="batalkan_pesanan.html">
+            <div class="row-card">
+              <span class="col-item">Sabtu, 18 Maret 2025</span>
+              <span class="col-item">Gedung Ilmu Komputer Lantai 1 C</span>
+              <span class="col-item status-dipesan">Telah di pesan</span>
+            </div>
+          </a>
+
+          <div class="row-card">
+            <span class="col-item">Sabtu, 18 Maret 2024</span>
+            <span class="col-item">Gedung Ilmu Komputer Lantai 1 A</span>
+            <span class="col-item status-selesai">Selesai</span>
+          </div>
+          <div class="row-card">
+            <span class="col-item">Sabtu, 18 Maret 2023</span>
+            <span class="col-item">Gedung Ilmu Komputer Lantai 1 B</span>
+            <span class="col-item status-selesai">Selesai</span>
+          </div>
+          <div class="row-card">
+            <span class="col-item">Sabtu, 18 Maret 2022</span>
+            <span class="col-item">Gedung Ilmu Komputer Lantai 1 C</span>
+            <span class="col-item status-selesai">Selesai</span>
+          </div>
+          <div class="row-card">
+            <span class="col-item">Sabtu, 18 Maret 2021</span>
+            <span class="col-item">Gedung Ilmu Komputer Lantai 1 C</span>
+            <span class="col-item status-selesai">Selesai</span>
+          </div>
+          <div class="row-card">
+            <span class="col-item">Sabtu, 18 Maret 2020</span>
+            <span class="col-item">Gedung Ilmu Komputer Lantai 1 C</span>
+            <span class="col-item status-selesai">Selesai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

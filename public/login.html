@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - GEMES Unila</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/csso2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!-- Gambar Samping -->
+        <div class="col-md-6 d-none d-md-block p-0">
+          <img
+            src="/images/gambarUnila.jpg"
+            alt="Gambar Unila"
+            class="login-img"
+          />
+        </div>
+
+        <!-- Form Login -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div class="login-box">
+            <div class="text-center mb-4">
+              <img
+                src="/images/LogoGemes_Login.png"
+                alt="Logo GEMES"
+                style="width: 230px"
+              />
+              <h6 class="text-black mt-3">Login</h6>
+            </div>
+            <form id="loginForm">
+              <div class="mb-3 input-group">
+                <span class="input-group-text"
+                  ><i class="bi bi-person"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="npm"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div class="mb-4 input-group">
+                <span class="input-group-text"><i class="bi bi-key"></i></span>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-info text-white">
+                  Masuk
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault(); // Mencegah reload
+
+          const npm = document.getElementById("npm").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            const response = await fetch("http://localhost:3000/api/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ npm, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              alert("Login berhasil!");
+
+              if (data.role === "admin") {
+                window.location.href = "admin/admin.html";
+              } else if (data.role === "mahasiswa") {
+                window.location.href = "mahasiswa/home.html";
+              } else if (data.role === "penjaga_gedung") {
+                window.location.href = "penjaga/penjaga.html";
+              } else {
+                alert("Role tidak dikenali!");
+              }
+            } else {
+              alert(data.message || "Login gagal!");
+            }
+          } catch (error) {
+            alert("Terjadi kesalahan saat login.");
+            console.error(error);
+          }
+        });
+    </script>
+  </body>
+</html>

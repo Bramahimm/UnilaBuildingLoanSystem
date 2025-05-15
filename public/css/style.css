@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #dbe3e0;
+}
+
+.login-img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.login-box {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .login-img {
+    display: none;
+  }
+}

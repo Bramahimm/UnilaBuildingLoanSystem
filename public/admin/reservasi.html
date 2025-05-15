@@ -1,0 +1,576 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col">
+    <header
+      class="sticky top-0 z-50 bg-[#00a9e0] flex items-center justify-between px-5 md:px-10 h-14 md:h-16 relative">
+      <div class="flex items-center space-x-2 md:space-x-3">
+        <a href="#">
+          <img
+            src="../../assets/images/LogoGemes.png"
+            alt="Logo Gemes"
+            width="200"
+            class="me-2" />
+        </a>
+      </div>
+      <div class="flex items-center space-x-8">
+        <nav class="hidden md:flex space-x-10 text-white text-sm font-semibold">
+          <a class="flex items-center space-x-1 hover:underline" href="#">
+            <i class="fas fa-home"> </i>
+            <span> Home </span>
+          </a>
+          <a class="flex items-center space-x-1 hover:underline" href="#">
+            <i class="fas fa-file-alt"> </i>
+            <span> Reservasi </span>
+          </a>
+          <a class="flex items-center space-x-1 hover:underline" href="#">
+            <i class="fas fa-sync-alt"> </i>
+            <span> Pengguna </span>
+          </a>
+        </nav>
+        <!-- Profile dropdown -->
+        <div class="relative" id="profile-dropdown-container">
+          <button
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="profile-dropdown"
+            class="bg-[#3ad29f] text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-md flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#00a9e0] focus:ring-white"
+            id="profile-dropdown-button"
+            type="button"
+            onclick="toggleDropdown()">
+            <span> administrator </span>
+            <i class="fas fa-chevron-down text-xs"> </i>
+          </button>
+          <div
+            aria-labelledby="profile-dropdown-button"
+            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
+            id="profile-dropdown"
+            role="menu"
+            tabindex="-1">
+            <div class="py-1" role="none">
+              <a
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                href="#"
+                role="menuitem"
+                tabindex="-1"
+                id="profile-dropdown-item-0">
+                Profile
+              </a>
+              <a
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                href="#"
+                role="menuitem"
+                tabindex="-1"
+                id="profile-dropdown-item-1">
+                Settings
+              </a>
+              <a
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                href="#"
+                role="menuitem"
+                tabindex="-1"
+                id="profile-dropdown-item-2">
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- sidebar -->
+    <div class="flex flex-1 overflow-hidden">
+      <aside
+        class="bg-white w-48 md:w-56 border-r border-gray-300 flex flex-col py-6 px-4 md:px-6 space-y-6">
+        <a href="/client/pages/admin/dashboard.html">
+          <button
+            class="hover:bg-gray-200 flex items-center space-x-2 rounded-md py-2 text-gray-900 font-semibold text-sm">
+            <i class="fas fa-user"></i>
+            <span> Pengguna </span>
+          </button>
+        </a>
+
+        <a href="#">
+          <button
+            class="hover:bg-gray-200 flex items-center space-x-2 rounded-md py-2 text-gray-900 font-semibold text-sm">
+            <i class="far fa-building"></i>
+            <span> Reservasi </span>
+          </button>
+        </a>
+
+        <a href="#">
+          <button
+            class="hover:bg-gray-200 flex items-center space-x-2 rounded-md py-2 text-gray-900 font-semibold text-sm">
+            <i class="fas fa-calendar-alt"></i>
+            <span> Kalender </span>
+          </button>
+        </a>
+
+        <a href="#">
+          <button
+            class="hover:bg-gray-200 flex items-center space-x-2 rounded-md py-2 text-gray-900 font-semibold text-sm">
+            <i class="fas fa-user-circle"></i>
+            <span> Profil </span>
+          </button>
+        </a>
+      </aside>
+      <main class="flex-1 overflow-y-auto p-4 md:p-6 space-y-6">
+        <!-- Top cards -->
+        <section
+          class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div class="flex border border-gray-300 rounded-md overflow-hidden">
+            <div class="flex-1 bg-white p-4">
+              <div class="text-black font-bold text-lg leading-none">439</div>
+              <div class="text-gray-500 text-xs mt-1">Pengguna</div>
+            </div>
+            <div class="bg-[#00a9e0] flex items-center justify-center w-16">
+              <i class="fas fa-user text-white text-2xl"> </i>
+            </div>
+          </div>
+          <div class="flex border border-gray-300 rounded-md overflow-hidden">
+            <div class="flex-1 bg-white p-4">
+              <div class="text-black font-bold text-lg leading-none">219</div>
+              <div class="text-gray-500 text-xs mt-1">Reservasi</div>
+            </div>
+            <div class="bg-[#00a9e0] flex items-center justify-center w-16">
+              <i class="fas fa-file-alt text-white text-2xl"> </i>
+            </div>
+          </div>
+          <div class="flex border border-gray-300 rounded-md overflow-hidden">
+            <div class="flex-1 bg-white p-4">
+              <div class="text-black font-bold text-lg leading-none">89</div>
+              <div class="text-gray-500 text-xs mt-1">Gedung</div>
+            </div>
+            <div class="bg-[#00a9e0] flex items-center justify-center w-16">
+              <i class="fas fa-building text-white text-2xl"> </i>
+            </div>
+          </div>
+        </section>
+        <!-- Graph and stats -->
+        <section
+          class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-4">
+          <div
+            class="col-span-3 bg-white rounded-md p-4 border border-gray-300 flex flex-col">
+            <div class="flex justify-between items-center mb-2">
+              <div class="text-xs font-semibold text-gray-700">
+                Total Reservasi (umum)
+              </div>
+              <select
+                aria-label="Select month"
+                class="text-xs border border-gray-300 rounded px-2 py-0.5">
+                <option>Bulan ini</option>
+              </select>
+            </div>
+            <img
+              alt="Line graph showing Pengguna data with blue line and gradient fade"
+              class="w-full"
+              height="150"
+              src="https://storage.googleapis.com/a1aa/image/e3fa18eb-6ec4-4607-d7bb-5dd72273bc2a.jpg"
+              width="600" />
+          </div>
+          <div
+            class="col-span-2 bg-white rounded-md p-4 border border-gray-300 flex flex-col">
+            <div class="flex justify-between items-center mb-2">
+              <div class="text-xs font-semibold text-gray-700">
+                Reservasi Terlaris
+              </div>
+              <select
+                aria-label="Select month"
+                class="text-xs border border-gray-300 rounded px-2 py-0.5">
+                <option>Bulan ini</option>
+              </select>
+            </div>
+            <img
+              alt="Donut chart showing Most Visited Page with blue, orange, and red segments"
+              class="w-full mb-4"
+              height="150"
+              src="https://storage.googleapis.com/a1aa/image/972b50ea-452c-4b35-0d1f-ec26c61efd41.jpg"
+              width="300" />
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li class="flex items-center justify-between">
+                <div class="flex items-center space-x-1">
+                  <span class="inline-block w-3 h-3 rounded-full bg-blue-600">
+                  </span>
+                  <span> Request a Quote </span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <span> $47,394 </span>
+                  <span class="text-green-600 font-semibold"> 81.54% </span>
+                </div>
+              </li>
+              <li class="flex items-center justify-between">
+                <div class="flex items-center space-x-1">
+                  <span class="inline-block w-3 h-3 rounded-full bg-orange-500">
+                  </span>
+                  <span> Career </span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <span> $47,394 </span>
+                  <span class="text-green-600 font-semibold"> 81.64% </span>
+                </div>
+              </li>
+              <li class="flex items-center justify-between">
+                <div class="flex items-center space-x-1">
+                  <span class="inline-block w-3 h-3 rounded-full bg-red-500">
+                  </span>
+                  <span> Work </span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <span> $47,394 </span>
+                  <span class="text-green-600 font-semibold"> 81.04% </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Stats cards below graph -->
+          <div
+            class="col-span-5 grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <div
+              class="bg-white border border-gray-300 rounded-md p-3 flex flex-col items-center">
+              <div class="text-xs font-semibold text-gray-700 mb-1">
+                Gedung Tersedia
+              </div>
+              <div class="text-black font-bold text-lg leading-none mb-1">
+                4
+              </div>
+              <div class="text-green-500 text-xs flex items-center space-x-1">
+                <i class="fas fa-arrow-up"> </i>
+                <span> 0.7% Meningkat </span>
+              </div>
+              <img
+                alt="Bar chart with blue bars representing Mahasiswa Aktif"
+                class="mt-2"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/45f4f7bb-f7ce-463b-372c-199d62d126b7.jpg"
+                width="100" />
+            </div>
+            <div
+              class="bg-white border border-gray-300 rounded-md p-3 flex flex-col items-center">
+              <div class="text-xs font-semibold text-gray-700 mb-1">
+                RESERVASI PER MINGGU (TOTAL)
+              </div>
+              <div class="text-black font-bold text-lg leading-none mb-1">
+                120
+              </div>
+              <div class="text-red-500 text-xs flex items-center space-x-1">
+                <i class="fas fa-arrow-down"> </i>
+                <span> 13.5% Menurun </span>
+              </div>
+              <img
+                alt="Line chart with green and red lines representing Reservasi Per Minggu"
+                class="mt-2"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/9555cd6a-58a6-498b-7cd0-a04b20b94e2b.jpg"
+                width="100" />
+            </div>
+            <div
+              class="bg-white border border-gray-300 rounded-md p-3 flex flex-col items-center">
+              <div class="text-xs font-semibold text-gray-700 mb-1">
+                Gedung Terpakai
+              </div>
+              <div class="text-black font-bold text-lg leading-none mb-1">
+                439
+              </div>
+              <div class="text-green-500 text-xs flex items-center space-x-1">
+                <i class="fas fa-arrow-up"> </i>
+                <span> 3.5% Increase </span>
+              </div>
+              <img
+                alt="Bar chart with orange bars representing Pengguna Aktif"
+                class="mt-2"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/181cb404-056b-4295-61b2-aedbc1bdf555.jpg"
+                width="100" />
+            </div>
+            <div
+              class="bg-white border border-gray-300 rounded-md p-3 flex flex-col items-center">
+              <div class="text-xs font-semibold text-gray-700 mb-1">
+                Total Reservasi Per Bulan
+              </div>
+              <div class="text-black font-bold text-lg leading-none mb-1">
+                8
+              </div>
+              <div class="text-green-500 text-xs flex items-center space-x-1">
+                <i class="fas fa-arrow-up"> </i>
+                <span> 0.7% Meningkat </span>
+              </div>
+              <img
+                alt="Bar chart with blue bars representing Penjaga Gedung Aktif"
+                class="mt-2"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/333157ed-c0f8-46ee-70f2-b4f4efec7f72.jpg"
+                width="100" />
+            </div>
+          </div>
+        </section>
+        <!-- Search and table -->
+        <section
+          class="max-w-5xl mx-auto bg-white rounded-md p-6 space-y-4 border border-gray-300">
+          <form class="flex items-center space-x-3">
+            <div class="relative flex-1">
+              <input
+                aria-label="Search user"
+                class="w-full border border-gray-300 rounded-md py-2 pl-10 pr-4 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00a9e0]"
+                placeholder="Search user"
+                type="search" />
+              <i
+                class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">
+              </i>
+            </div>
+            <button
+              class="border border-gray-300 rounded-md px-3 py-1 text-xs text-gray-700 font-semibold hover:bg-gray-100"
+              type="button">
+              Filters
+            </button>
+          </form>
+          <h3 class="font-semibold text-sm text-gray-900">Daftar Pengguna</h3>
+          <div class="overflow-x-auto">
+            <table
+              class="w-full text-xs text-left border-collapse border border-gray-300">
+              <thead class="bg-gray-200">
+                <tr>
+                  <th class="border border-gray-300 px-2 py-1 w-10">No</th>
+                  <th class="border border-gray-300 px-2 py-1">Nama</th>
+                  <th class="border border-gray-300 px-2 py-1">Email</th>
+                  <th class="border border-gray-300 px-2 py-1 w-24">Role</th>
+                  <th class="border border-gray-300 px-2 py-1 w-40">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">1</td>
+                  <td class="border border-gray-300 px-2 py-1">Rosidin</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Rosidin@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Penjaga</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">2</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Roykiyosi Rodrigo
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Roykiyosi@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a
+                      class="text-blue-600"
+                      href="/client/pages/mahasiswa/home.html">
+                      Detail
+                    </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">3</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Nella Kharisma
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Nellacantik@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">4</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Bima sakti Sangat
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Bimagondrong@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Penjaga</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">5</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Markopolo Renang
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Kolammarcopolo@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">6</td>
+                  <td class="border border-gray-300 px-2 py-1">Kolam Unila</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Kolamunila@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Penjaga</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">7</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">8</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">9</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">10</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">11</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">12</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">13</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-300 px-2 py-1">14</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="border border-gray-300 px-2 py-1">15</td>
+                  <td class="border border-gray-300 px-2 py-1">Seterusnya</td>
+                  <td class="border border-gray-300 px-2 py-1">
+                    Seterusnya@example.com
+                  </td>
+                  <td class="border border-gray-300 px-2 py-1">Mahasiswa</td>
+                  <td class="border border-gray-300 px-2 py-1 space-x-3">
+                    <a class="text-blue-600" href="#"> Detail </a>
+                    <a class="text-blue-600" href="#"> Edit </a>
+                    <a class="text-red-600" href="#"> Hapus </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex justify-center mt-6">
+            <button
+              class="bg-[#00a9e0] text-white text-xs font-semibold rounded-full px-6 py-1"
+              type="button">
+              Lainnya
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/client/assets/js/adminDashboard.js"></script>
+  </body>
+</html>
