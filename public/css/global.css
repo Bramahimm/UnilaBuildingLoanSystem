@@ -1,0 +1,35 @@
+/* ========================= */
+/* Buat Custom Bootstrap */
+/* ========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+.hero-section {
+  background-color: #00afe4;
+}
+
+.bg-primary {
+  background-color: #00afe4 !important;
+  border-color: #00afe4 !important;
+}
+
+/* sesuai pallet warna */
+
+.bg-hijausatu {
+  background-color: #017598;
+}
+.bg-hijaudua {
+  background-color: #087ea2;
+}
+.bg-hijautiga {
+  background-color: #05a7be;
+}
+.bg-hijauempat {
+  background-color: #18c4b8;
+}
+.bg-hijaulima {
+  background-color: #1ed7cd;
+}

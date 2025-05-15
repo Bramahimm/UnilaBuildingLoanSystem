@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Booking Gedung - GEMES Unila</title>
+    <title>GEMES Unila - Reservasi Gedung</title>
 
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="/css/global.css" />
 
-    <!-- Boxicons -->
+    <!-- Favicon -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
+      rel="icon"
+      href="images/logoUnila.png"
+      type="image/png"
+      sizes="16x16"
+    />
   </head>
   <body class="bg-light">
     <!-- Navbar -->
@@ -24,55 +28,52 @@
       <div class="container">
         <a class="navbar-brand text-white" href="index.html">
           <img
-            src="../../assets/images/LogoGemes.png"
+            src="/images/LogoGemes.png"
             alt="Logo Gemes"
-            width="200" />
+            width="200"
+            class="me-2"
+          />
         </a>
+        <!-- kolom pencarian -->
         <input
           type="text"
-          class="form-control w-25 rounded-2 border-0 shadow-sm"
-          placeholder="Cari Gedung" />
+          class="form-control w-25"
+          placeholder="Cari Gedung"
+        />
+
+        <!-- Tombol untuk Mobile -->
         <button
           class="navbar-toggler text-white"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav">
+          data-bs-target="#navbarNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Menu Navigasi -->
         <div
           class="collapse navbar-collapse justify-content-end"
-          id="navbarNav">
+          id="navbarNav"
+        >
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
-              <a class="nav-link text-white fw-light" href="#">Home</a>
+              <a class="nav-link text-white active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-light" href="#">Riwayat</a>
+              <a class="nav-link text-white" href="riwayatpeminjaman.html"
+                >Riwayat</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-light" href="#">Daftar Gedung</a>
+              <a class="nav-link text-white" href="#">Daftar Gedung</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-light" href="#">Kalender</a>
+              <a class="nav-link text-white" href="#">Kalender</a>
             </li>
           </ul>
-          <!-- Example single danger button -->
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn btn-success dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false">
-              @ Username
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Dashboard</a></li>
-              <li><a class="dropdown-item" href="#">Riwayat Peminjaman</a></li>
-              <li><a class="dropdown-item" href="#">Kalender Akademik</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Status Peminjaman</a></li>
-              <li><a class="dropdown-item" href="#">Profil</a></li>
-            </ul>
+          <div class="col-md-2 text-md-end mt-2 mt-md-0">
+            <a href="#" class="btn bg-hijauempat text-white">@username</a>
           </div>
         </div>
       </div>
@@ -86,7 +87,8 @@
           <img
             src="../../assets/images/UnilaLandingPage.png"
             alt="Gedung Rektorat"
-            class="img-fluid w-75 rounded shadow" />
+            class="img-fluid w-75 rounded shadow"
+          />
         </div>
 
         <!-- Teks di sebelah kanan -->
@@ -116,7 +118,8 @@
         <div class="col-md-6">
           <h3 class="text-primary fs-5">Fasilitas Tersedia</h3>
           <table
-            class="table table-sm table-bordered text-center bg-white shadow-sm rounded">
+            class="table table-sm table-bordered text-center bg-white shadow-sm rounded"
+          >
             <thead class="table-primary">
               <tr>
                 <th>Fasilitas</th>
@@ -167,66 +170,78 @@
       <h3 class="text-primary fs-5">Pilih Fasilitas</h3>
       <div class="d-flex flex-wrap gap-2">
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-chair fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Kursi
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-speaker fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Sound System
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
 
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-microphone fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Mic
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-speaker fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Sound System
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
 
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-laptop fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Proyektor
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
         <label
-          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50">
+          class="d-flex align-items-center bg-white p-2 rounded shadow-sm w-50"
+        >
           <i class="bx bx-plug fs-4 text-primary me-2"></i>
           <input class="form-check-input me-2" type="checkbox" /> Terminal Kabel
           <input
             type="number"
             class="form-control w-25 ms-auto"
             min="1"
-            placeholder="Jumlah" />
+            placeholder="Jumlah"
+          />
         </label>
       </div>
     </section>
